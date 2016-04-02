@@ -49,11 +49,12 @@ What is being sold is not a single device, but rather a range of products. This 
 
 The basic product consists of four main hardware components:
 \begin{itemize}
-  \item Driver Facing Camera - The camera facing the driver provides live video of the driver so that algorithms can be performed on the drivers face in real time. Furthemore the camera is able to see images in low light conditions.
+  \item Driver Facing Camera - The camera facing the driver provides live video of the driver so that algorithms can be performed on the drivers face in real time. Furthermore the camera is able to see images in low light conditions.
   \item Speaker - The speaker is used to wake the driver up. The speaker will play randomly generated noises. This prevents the driver from getting used to the sounds and thus will be more likely to wake him up\cite{Habituation}.
   \item Micro-controller - Once the camera has filmed the video, the Micro-controller needs to process this video, the video is processed in real time and as such a micro-controller powerful enough to perform real time video processing will be used. The micro-controller performs the eye tracking and detection using OpenCV algorithms - these are free and open source video and image processing software algorithms. The micro-controller will also manage the speaker and ensure it plays a sounds when the driver is detected to be asleep \cite{OpenCV}.
   \item Power Supply - In order to keep the device operating the device needs a source of power. The device can be either plugged into the 12V plug all cars have or it can be directly connected to the car power source for permanent mounts. The power is transformed to the correct voltage at the power supply unit. This unit will also provide surge protection.
-  
+\end{itemize}
+
 The product has various modes of operation as seen in \cref{fig:DeviceFlowChart}. The default mode is the passive scanning mode where the device detects the drivers face and monitors eye movement. However once the eye is detected as closed the product  enters a minor emergency state where it assumes the driver has just dosed off. The device emits a brief sound to wake the driver up. If this does not work it assumes the drive is in a deeper state of sleep and proceeds to take more drastic action. The action taken depends on the time the driver remains unresponsive and functions of the installed product.
 
 \begin{figure}[H]
@@ -64,11 +65,19 @@ The product has various modes of operation as seen in \cref{fig:DeviceFlowChart}
 \label{fig:DeviceFlowChart}
 \end{figure}
 
-\end{itemize}
+
 
 \section{Product Range}
 
-The the device prototype that will be demonstrated is envisioned as being to  
+The the device prototype explained above is envisioned as being the entry level product that consumers can purchase. This will be targeted for those on a budget who require this device.
+
+As the business progresses, the product range will be expanded based on consumer feedback.
+
+There are a number of other products and expansions planned;
+\begin{itemize}
+	\item Frequent Driver Fleeteye camera - This product is aimed at consumer such as taxi operators and deliverymen that spend long amounts of time behind the wheel, as they are more likely to drive while tired or near exhausted(some taxi drivers can have shifts over 14 hours long\cite{taxiDriverHours}.) In this case sound may not be enough to wake them up. This product will have a strip attached that will be connected to the steering wheel that will vibrate if the driver falls asleep behind the wheel.
+    \item Long Distance Transport Fleeteye camera - this product also incorporates the vibrating steering wheel attachment, furthermore it also has a second camera facing the road in front of the driver. It also has a GPS unit to track the vehicle location. All this data is recorded on an SD card. This system is aimed for long distance freight vehicles. This allows fleet managers to monitor their drivers and vehicles after they have driven for quality and insurance purposes.
+\end{itemize}
 
 \section{Competitor product analysis}
 There are currently two primary international competitors producing a similar product. Seeing Machines in Australia have developed a technology that tracks driver eyelid movement through computer vision algorithms. They monitor the frequency and duration of blinking, as well as eyelid velocity. If the driver’s head begins to drop, an audio alarm is triggered and the seat vibrates. If they fall asleep again, a dispatcher is alerted and may make radio contact with the driver to check if they need a break. Seeing Machines has specifically worked with drivers that operate Caterpillar mining equipment.

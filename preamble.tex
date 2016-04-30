@@ -1,5 +1,5 @@
 \documentclass[11pt]{report} %size of font and type of layout
-\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[a4paper,margin=1.1in]{geometry}
 
 \usepackage{lscape}
 \usepackage{pgfplots}
@@ -45,7 +45,7 @@
 	\titleformat{\chapter}{\normalfont\huge\bfseries}{\thechapter.}{1em}{} %have number before chapter title
 	\titlespacing{\chapter}{0pc}{0pc}{0pc} %have nice spacing after chapter title {indent} {before} {after}
 	\titlespacing{\section}{0pc}{1pc}{0pc} %have nice spacing after section title {indent} {before} {after}
-	\titlespacing{\subsection}{1pc}{1pc}{0pc} %have nice spacing after subsection title {indent} {before} {after}
+	\titlespacing{\subsection}{1pc}{0pc}{0pc} %have nice spacing after subsection title {indent} {before} {after}
 	\titlespacing{\subsubsection}{0pc}{0pc}{-1pc} %have nice spacing after subsection title {indent} {before} {after}
 	\titlelabel{\thetitle.\quad} %full stop after the number in the heading title
 \usepackage{etoolbox} %remove page break before chapter heading
@@ -98,4 +98,4 @@
 \belowdisplayskip=5pt %remove space after equations
 \cleanlookdateon %remove current date format to replace with [UKenglish]{isodate}
 %\let\savenumberline\numberline\def\numberline#1{\savenumberline{#1.}} %adds dot after chapter title in toc, comment this out to get appendices to work and not cause spacing errors.
-\AtEndEnvironment{itemize}{\vspace{-5pt}} %spacing after lists
+%\AtEndEnvironment{itemize}{\vspace{-5pt}} %spacing after lists

@@ -73,6 +73,9 @@
 \usepackage{multirow} %make cells span multiple rows in tables
 \captionsetup{belowskip=5pt,aboveskip=4pt}
 \newcolumntype{L}{>{\centering\arraybackslash}m{3cm}} %centre and wrap text in tables
+\newcolumntype{k}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} %call by L{0.3\textwidth} etc. 
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \usepackage{booktabs} %use \toprule, \midrule, \bottomrule and \cmidrule for better spacing in tables
 \usepackage{pbox} %force line break in a table cell
 %---------------------------create own lists---------------------------%
@@ -86,13 +89,15 @@
 %\sfdefault = calibri-like font, \rmdefault = times new roman-like
 \renewcommand\UrlFont{\rmfamily}
 \renewcommand{\familydefault}{\rmdefault}
+
+\pgfplotsset{compat=1.12} %because it complained
 %----------------------------------------------------------------------%
 \begin{document}
 \begin{onehalfspace} %single line spacing
 %\counterwithout{figure}{chapter} %makes figures go 1, 2, 3 instead of 1.1, 1.2, 1.3, etc
 %\counterwithout{table}{chapter} %makes tables go 1, 2, 3 instead of 1.1, 1.2, 1.3, etc
 %\counterwithout{section}{chapter} %make sections 1, 2, 3 not 1.1 etc
-\pgfplotsset{compat=1.12} %because it complained
+
 \pretolerance=10000 %disable hyphenating at line breaks
 \abovedisplayskip=5pt %remove space before equations
 \belowdisplayskip=5pt %remove space after equations

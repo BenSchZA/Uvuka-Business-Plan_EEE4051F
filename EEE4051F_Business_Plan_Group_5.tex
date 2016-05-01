@@ -23,13 +23,6 @@
 \cfoot{\thepage}
 }
 
-% \fancypagestyle{customlandscape}{%
-% \fancyhf{}
-% \cfoot{\thepage}
-% %\newgeometry{left=2cm, right=2cm, bottom=2cm, top=2cm}
-% % ??
-% }
-
 \newpage
 \chapter*{Executive Summary}
 \addcontentsline{toc}{chapter}{Executive Summary}
@@ -94,8 +87,8 @@ In South Africa, there were 4500 road accidents which claimed the lives of more 
 \section{Uvuka's Mission}
 Uvuka seeks to reduce the number of deaths on the road by providing a driver-monitoring device, which will set off alarms when a driver becomes drowsy and closes their eyes or is distracted. This device is targeted at drivers who spend many hours on the road and are prone to fatigue. It can be used by individuals or by companies who own fleets of trucks, buses, or taxis. As this device will be permanently mounted inside the company's vehicles and will be linked to the main control room, the company will be able to monitor the drivers and receive alerts to make radio contact if a driver is becoming too drowsy to drive, thus ensuring their safety.
 
-\section{Purpose of Business Plan}
-This business plan lays out the progress made to date by our budding company, in order to secure investments that will enable Uvuka to continue to grow. It provides detail on the product, marketing strategy, financial plan, and business operations.
+\section{Purpose of this Business Plan}
+This business plan lays out the progress made to date by our budding company, in order to secure investments that will enable Uvuka to continue to grow. It provides detail on our product, the marketing strategy, financial plan, and business operations.
 
 \section{Layout of Proposal}
 The business plan begins by describing the product in detail. The marketing plan is then presented where the problem is dealt with in more detail and the target market as well as the competitors in this field are discussed. The finances of the company establish the required figures an projections including the operation time-line, expected costs, and cash flows. Lastly, the operations plan will describe the possible business office location, the manufacturing process, the production time-line, the team members, and how we plan to extend our business going forward.
@@ -137,12 +130,29 @@ The product has various modes of operation as seen in \cref{fig:DeviceFlowChart}
 
 %TODO - BEN: talk about what is going on in this picture, and how it is an actual working system, not just something we did in paint. Although the colours kinda are.
 
+\subsection{Optical Feature Recognition}
+
+An initial prototype has already been developed using a BeagleBone Black Linux embedded system for the processing of the optical data. A basic feature recognition algorithm was created using OpenCV. A Haar Cascade classifier was used for each of the eye features: \textit{responsive} (green), \textit{unresponsive/distracted} (orange) and \textit{closed} (red) as seen in ~\cref{fig:OpticalFeature}. 
+
+The classifiers used are open source and in future product development these classifiers can be improved upon with extensive computational learning algorithms. This will create a database of real training data images using the Uvuka Pro camera system.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{images/ocv}
 \vskip10pt
 \caption[Optical feature recognition]{Optical feature recognition - responsive (green), unresponsive/distracted (orange) and closed (red) squares on eyes show proof of concept}
-\label{fig:DeviceFlowChart}
+\label{fig:OpticalFeature}
+\end{figure}
+
+\subsection{Uvuka Supervisor Interface}
+The Uvuka Supervisor Interface provides a means for the fleet manager or supervisor to monitor their vehicles. This interface can be seen in \cref{fig:UvukaInterface} below. The interface was designed using the Freeboard interface designer. The IoT (Internet of Things) platform uses the Xively cloud framework which provides an IoT  product management system that is secure, scalable and has great support. Different sensor inputs and control outputs can be set up to include GPS location, camera monitoring, driver responsiveness, vehicle speed, and vehicle alarms as seen in \cref{fig:UvukaInterface}. This is highly extensible and allows Uvuka the flexibility it needs to stay relevant to customers and their changing requirements.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/uvuka-interface.png}
+\vskip10pt
+\caption[Uvuka Interface]{Uvuka Pro Supervisor Interface.}
+\label{fig:UvukaInterface}
 \end{figure}
 
 \section{Product Range}
@@ -187,11 +197,7 @@ The product will need to be versatile in order to cater for the needs of a numbe
 \end{itemize}
 
 \section{Intellectual Property and freedom of trade}
-%Luke wants to do this section :P
-%-Patent for the software/device that links camera to monitoring center.
-%note: i'm just putting down words now, i've got no idea what i'm talking about
-
-As briefly mentioned \cref{sec:advantages}, this drowsiness sensing technology has been around for a number of years. Uvuka, however, brings new ideas to the fold by incorporating fleet monitoring systems with a control center communications link - something that is yet to be made commercially available. It is for this reason that Uvuka applied for, and received their own patent on their communications link which alerts the control center of a driver who is showing signs of fatigue. This then allows the control center to check in on the driver and ensure their safety.
+As briefly mentioned in \cref{sec:advantages}, this drowsiness sensing technology has been around for a number of years. Uvuka, however, brings new ideas to the fold by incorporating fleet monitoring systems with a control center communications link - something that is yet to be made commercially available. It is for this reason that Uvuka applied for, and received their own patent on their communications link which alerts the control center of a driver who is showing signs of fatigue. This then allows the control center to check in on the driver and ensure their safety.
 
 \newpage
 \chapter{Marketing Plan}
@@ -578,8 +584,8 @@ All components are sourced from Mouser in order to reduce the risk of importing 
     Camera Module & OmniVision OV9712 IMAGE SENSOR MODULE & R 432.35 & Mouser: 931-LI-OV9712-FF-65  \\
     Embedded Linux System & Olimex A13 & R 992.82 & Mouser: 909-A13OLINUXINOMICR \\
     Miscellaneous  & Passive components & R 500 & Mouser \\
-    PCB Manufacturing & PCB, Part Placement & R 250 & Zyteq Technologies \\
-    Enclosure Manufacturing & 3D printing and injection moulding & R 300 & Skeg Product Development \\
+    PCB Manufacturing & PCB, Part Placement & R 250 & Microtronix \\
+    Enclosure Manufacturing & 3D printing and injection moulding & R 300 & PC Plastics \\
     Product Assembly &       & R 100 & Uvuka \\
 
     \textbf{Total:} &       & R 3 044.11 &  \\
@@ -590,22 +596,55 @@ All components are sourced from Mouser in order to reduce the risk of importing 
 
 \newpage
 \subsection{PCB Manufacturing}
-%TODO fix this cape town reference for Zyteq
-The PCB manufacturing will be outsourced to Zyteq industries who have a PCB production and assembly line locally in Cape Town - this will allow rapid prototyping and quality control in the early stages of the company.
+The PCB manufacturing will be outsourced to Microtronix, a PCB production company with their own assembly line locally in Johannesburg. This will allow rapid prototyping and quality control in the early stages of the product development. They cater to low-volume prototype production and parts placement as well as higher volume mass production. They use the ISO 9001:2008 quality control standard, and also provide a packaging service which could be used when demand for the Uvuka Pro system increases beyond in-house packaging volumes.
 
-%TODO fix this one too... Joburg Joburg Joburg.
 \subsection{Enclosure Manufacturing}
-Initially 3D printing and subsequent injection moulding will be completed by Skeg product development in Cape Town, after which the process will be outsourced overseas to reduce production costs. 
+Initially 3D printing and subsequent injection molding will be completed by PC Plastics in Johannesburg, after which the process will be outsourced overseas to reduce production costs. PC Plastics also use the ISO 9001:2008 quality control standard - this reduces the risk of enclosure failure during operation. They also provide enclosure assembly should production demands increase beyond in-house assembly capabilities before an overseas production company is found. 
 
 %TODO - this needs to be talked about, can't just be left on its own here without an explanation + detail, blah blah blah :P
 \section{Production Timeline/ Schedule}
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{Gantt_2016.PNG}
+\includegraphics[width=1\textwidth]{images/Gantt_2016.PNG}
 \vskip10pt
-\caption[Gannt Chart of the first year of operations of Uvuka]{Gannt Chart of the first year of operations of Uvuka}
+\caption[Gantt Chart of the first year of operations of Uvuka]{Gantt Chart of the first year of operations of Uvuka}
 \label{fig:Gantt Chart 1}
 \end{figure}
+
+\newpage 
+\section{Risk Analysis}
+A new business venture faces many risks and it is imperative that these risks are mitigated to ensure company success. One of the ways of pre-empting risks is to analyse them with the IEC61508 standard. This is done by looking at possible risks and their associated severity and frequency of occurrence, and then designing mitigation strategies to reduce their impact. The severity of an event is classed from Negligible to Catastrophic, and the probability of occurrence from Incredible to Frequent, as seen in \Cref{fig:risktable}. The classes of Risk, where $Risk = Severity * Probability$ are split into four categories, Class I to IV.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{images/risktable}
+\vskip10pt
+\caption{IEC61508 Risk matrix}
+\label{fig:risktable}
+\end{figure}
+
+This risk matrix will be used to classify each of the events as outlined in \cref{tab:rm} and show the mitigation strategies that could be applied to each event. A limited number of risk situations will be treated in this table to show the general process behind risk mitigation.
+
+\begin{table}[H]
+  \centering
+  \caption{Risk Classes and Mitigation Strategies}
+    \begin{tabular}{k{0.25\textwidth}ccck{0.25\textwidth}cc}
+    \toprule
+    \textbf{Event} & \textbf{Sev} & \textbf{Prob} & \textbf{Class} & \textbf{Mitigation} & \textbf{Prob} & \textbf{Class} \\
+    \midrule
+    Manufacturing defects causing non- or partially functioning devices & Cat & R &	II &	Test every product thoroughly before commissioning throught multiple quality control checks &  Im &	III \\ \midrule
+	Lack of funding & Cat & O & I & Target many investors and companies for investment & Im & III \\ \midrule
+    Vehicles no longer need drivers and company becomes bankrupt & Cat & P & I & Adapt product and company goals when the time comes & Im & IV \\ \midrule
+    Lawsuit against Uvuka for product not working when used incorrectly & Crit & O & II & Seek legal advice to assist in writing up contract agreement before selling product & Inc & IV \\ \midrule
+    Core member of Uvuka Team leaves company & M & R & III & Create office spirit, encourage and reward hard work, break down big goals into smaller goals & Inc & IV \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:rm}%
+\end{table}%
+
+As can be seen from \cref{tab:rm}, risks have been thought of, well, mostly. No one will die. Well, they might. But we'll have lawyers by then. % and stuff and nonsense blah blah % fix this tomorrow -L
+
+
 
 \pagebreak
 \section{Staff and team expansion} 
@@ -627,7 +666,6 @@ Gareth received his BSc. (Eng) in Electrical and Computer Engineering from the U
 Luke is an avid entrepreneur, with interests in system design, optimization, and a far-reaching vision. He obtained his BSc. (Eng) in Mechatronics from UCT, and his interests are applied within the Operations and Future Development section of Uvuka to stay abreast of the current developments and ensure that the company is always relevant to the market.
 
 \subsection{Future Hires}
-
 As Uvuka expands, it will be necessary to increase the number of team members hired. 
 
 When the product first goes to the market, a salesman will be hired. This salesman must be able to both sell the product and help the five founders perfect their sales technique. In this way, the founders can also assist in selling the product and thus alleviate the need to hire more salespeople.
@@ -683,6 +721,11 @@ In the not-too-distant future, the road will be filled with self-driving vehicle
 \caption[Google's Self-driving Cars]{Google's self-driving Cars \cite{googlecars}}
 \label{fig:gcars}
 \end{figure}
+
+
+
+
+
 
 
 

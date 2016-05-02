@@ -76,11 +76,30 @@ Our five founding members consist of a combination of Mechatronic and Electrical
 \listoffigures
 \newpage
 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\newpage
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Glossary}
+\chapter*{\centerline{Glossary}}
+
+\begin{tabular}{@{ }ll}
+	Accelerometer:      & an electronic sensor for measuring acceleration\\
+    Algorithm: a process 
+    Global Positioning System:	&	a satellite-based navigation system typically accurate to within 10 m \\
+	Gyroscope: & an electronic sensor for measuring angular velocity\\
+    Inertial Navigation System:	&	a combination of electronic sensors that provide a reference location\\
+	Magnetometer:   & an electronic sensor for measuring magnetic forces\\
+
+\end{tabular}
+\newpage
+
 \pagenumbering{arabic}	%start the page numbering (and reset it to zero)
 \chapter{Introduction}
-%In South Africa, there were 4 500 road accidents which claimed the lives of more than 5 500 people between 2014 and 2015 \cite{EWNRoadDeaths}. Uvuka seeks to reduce the number of deaths on the road by providing a driver-monitoring device, which will set off alarms when a driver becomes drowsy and closes their eyes. This device is targeted at drivers who spend many hours on the road and are prone to fatigue. It can be used by individuals or by companies who own fleets of trucks, buses, or taxis. As this device will be permanently mounted inside the company's vehicles and will be linked to the main control room, the company will be able to monitor the drivers and receive alerts to make radio contact if a driver is becoming too drowsy to drive, thus ensuring their safety.
-
-
 \section{Background}
 In South Africa, there were 4500 road accidents which claimed the lives of more than 5500 people between 2014 and 2015 \cite{EWNRoadDeaths}. Around 25\% of these accidents were due to delayed reactions in fatigued drivers.
 
@@ -118,18 +137,19 @@ The basic product consists of four main hardware components:
   \item \textit{Power Supply} - The device can either be plugged into the standard 12 V cigarette plug, or it can be directly connected to the car power source for permanent mounts. The power is regulated to the correct voltage within the device, which will also include surge protection.
 \end{enumerate}
 
+\newpage 
+\subsection{Modes of Operation}
 The product has various modes of operation as seen in \cref{fig:DeviceFlowChart} below. The system defaults to the passive scanning mode where the device detects the driver's face and monitors eye movement. If the eye is determined to be closed, the device  enters a minor emergency state and assumes the driver's concentration has begun to wane. A brief sound is emitted to alert the driver. If this does not cause a satisfactory level of alertness, it assumes the driver is at risk of falling asleep and proceeds to take more drastic action. The action taken depends on the time the driver remains unresponsive and will vary from one type of device to the other.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{images/NVP_Poster_Flowchart.pdf}
+\includegraphics[width=0.9\textwidth]{images/NVP_Poster_Flowchart.pdf}
 \vskip10pt
 \caption[Device Operation Activity Diagram]{Process diagram of the device operation}
 \label{fig:DeviceFlowChart}
 \end{figure}
 
-%TODO - BEN: talk about what is going on in this picture, and how it is an actual working system, not just something we did in paint. Although the colours kinda are.
-
+\newpage 
 \subsection{Optical Feature Recognition}
 
 An initial prototype has already been developed using a BeagleBone Black Linux embedded system for the processing of the optical data. A basic feature recognition algorithm was created using OpenCV. A Haar Cascade classifier was used for each of the eye features: \textit{responsive} (green), \textit{unresponsive/distracted} (orange) and \textit{closed} (red) as seen in ~\cref{fig:OpticalFeature}. 
@@ -138,12 +158,13 @@ The classifiers used are open source and in future product development these cla
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{images/ocv}
+\includegraphics[width=0.9\textwidth]{images/ocv}
 \vskip10pt
 \caption[Optical feature recognition]{Optical feature recognition - responsive (green), unresponsive/distracted (orange) and closed (red) squares on eyes show proof of concept}
 \label{fig:OpticalFeature}
 \end{figure}
 
+\newpage
 \subsection{Uvuka Supervisor Interface}
 The Uvuka Supervisor Interface provides a means for the fleet manager or supervisor to monitor their vehicles. This interface can be seen in \cref{fig:UvukaInterface} below. The interface was designed using the Freeboard interface designer. The IoT (Internet of Things) platform uses the Xively cloud framework which provides an IoT  product management system that is secure, scalable and has great support. Different sensor inputs and control outputs can be set up to include GPS location, camera monitoring, driver responsiveness, vehicle speed, and vehicle alarms as seen in \cref{fig:UvukaInterface}. This is highly extensible and allows Uvuka the flexibility it needs to stay relevant to customers and their changing requirements.
 
@@ -155,6 +176,7 @@ The Uvuka Supervisor Interface provides a means for the fleet manager or supervi
 \label{fig:UvukaInterface}
 \end{figure}
 
+\newpage
 \section{Product Range}
 The the Uvuka Pro explained in \cref{sec:Technical description of Uvuka} above is envisioned as being the initial market entry product that commercial customers will be able to order. This will be targeted at freight companies' truck drivers who require this device. As the business grows, the product range will be expanded based on consumer feedback and market research.
 
@@ -168,6 +190,7 @@ There are a number of other products and expansions planned:
 \label{sec:advantages}
 Uvuka's devices will include unique features that allow them to perform several of the tasks currently performed by competing products. The primary difference in our innovative product is in our communications link between the driver and an external onlooker. This allows real-time monitoring that ensures the driver cannot simply ignore the device alerts or turn the device off without alerting the supervisor. Toyota and Seeing Machines are two companies that have developed devices which share certain similarities with our product. These are presented below.
 
+\newpage
 Toyota have been implementing driver alertness technology in their luxury Toyota Crown vehicles since 2008. This allows the on-board computer to calculate how open the driver's upper and lower eyelids are as seen in \cref{fig:toyota_sensors}. They also include proximity sensors outside the vehicle to allow advanced preparation of brakes or airbags depending on the likelihood of a collision \cite{toyota}. 
 \begin{figure}[H]
 \centering
@@ -176,11 +199,11 @@ Toyota have been implementing driver alertness technology in their luxury Toyota
 \caption[Toyota driver alertness system]{Toyota's driver alertness system tracks eyelids in real-time \cite{toyota}}
 \label{fig:toyota_sensors}
 \end{figure}
-\pagebreak
+
 Seeing Machines partnered with Intel, Land Rover, and Jaguar to integrate their technology into a Jaguar F-type at the 2015 Consumer Electronics Show. This further displays the relevance of this technology today internationally. A camera monitors the driver to determine the early signs of drowsiness or distraction in the form of eyelid closing as well as tilting of the head, a common indication that the driver is beginning to fall asleep. Warning signs are then given to the driver via the on-board touchscreen, in the form of audio and visual alerts \cite{sm_similarities}. A video still is shown in \cref{fig:sm_video} with a lighter circle in the centre showing the direction in which the driver is looking.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{images/seeingmachines.png}
+\includegraphics[width=0.75\textwidth]{images/seeingmachines.png}
 \vskip10pt
 \caption[Toyota driver alertness system]{Seeing Machines technology tracks driver's pupils to determine drowsiness or distractions and provide warnings \cite{sm_similarities}}
 \label{fig:sm_video}
@@ -325,12 +348,23 @@ In order to gain more traction in the market, Uvuka will seek to partner with th
 
 In addition to the AA, a partnership with an insurance company like Santam or Mutual \& Federal would be beneficial. Our devices would be able to reduce the insurance risk on the road and allow the insurer to offer a lower premium on their clients' policies that cover vehicles fitted with Uvuka hardware.
 
+\section{Market uptake}
+
+Based on current government projections, the amount of freight transported over roads in Gauteng is expected to drastically increase in the future. The Gauteng-Durban freight transport corridor increased its volumes of freight transport by an estimated 152\% from 2011 to 2014\cite{freighttransport}. This is just a single route in the region and is expected to grow each year. With this increased need to transport freight, more freight trucks will need to be purchased, increasing the number of trucks that require our product. With this substantial fleet of trucks on Gauteng roads, the question becomes not whether Uvuka can find customers to purchase its product, but rather if it has the capacity to supply the growing demand.
+
+The current sales projections outlined in the finance section are sales goals set to ensure that the company makes a profit. The expected ramp-up in sales is due to the Uvuka brand becoming know and trusted and sales to new customers increasing as a result. Furthermore, the number of private vehicles is also expected to increase. Once the product is marketed to these customers, there should be a larger customer base to which we can market our product.
+
+\section{Distribution channel}
+Uvuka's initial product aimed at commercial freight companies will be distributed once final quality control checks have been undertaken. Components and various subsystems are sourced from other businesses in order to reduce set-up costs. Once these are obtained from the various suppliers, our team will assemble and test the units on our premises. Clients will then be able to browse and order devices online via our website.
+
+Upon payment approval, Uvuka will send a technical company representative to install the device in the customer's vehicle. This eliminates the need for a courier or customer to collect the goods from Uvuka's offices. It also ensures higher customer satisfaction as the device can be tested in the vehicle and shown to the customer under the guidance of one of our team members.
+
 \newpage
 
 \chapter{Finances}
 
 \section{Time-line of Operation}
-In order to accurately estimate the finances of the company, a timeline of business operations is constructed:
+In order to accurately estimate the finances of the company, a time-line of business operations is constructed:
 
 {\bfseries \nth{1} Quarter of Operations}
 \begin{itemize}
@@ -395,7 +429,7 @@ Estimations for the number of products produced and sold are made in \cref{tab:P
 
 The values listed are excluding VAT which must be included when selling to the customer. The cost to assemble the raw materials and have them manufactured is shown in \cref{tab:productCost}. The total cost of product is calculated using the raw material and manufacturing costs but also includes the labour costs (technicians' salaries). This price is increased every year with inflation. 
 
-The markup of the product is calculated to ensure that we have made a profit, while still ensuring that our product is not too expensive so as to leave Uvuka exposed to cheaper competing alternatives.
+The markup of the product is calculated to ensure that we break even within three years, while still ensuring that our product is not too expensive so as to leave Uvuka exposed to cheaper competing alternatives.
 
 \begin{table}[htbp]
   \centering
@@ -442,6 +476,7 @@ Uvuka will be required to pay tax. Vat is 14\% of the price on products sold and
 
 The other tax that needs to be dealt with is income tax, at a rate of 28\% on the profits of the business. This value has been factored into the cash flow statement based on results calculated in the income statement.
 
+\newpage
 \section{Employee Cost Breakdown}
 Salaries are the second highest cost to the business. The salary breakdown is shown in \cref{tab:salaries}. The founders start off with a very low salary which increases proportionally with business growth. Only a single salesperson is needed as it is assumed the founders will also take part in product sales. While the founders have very little sales experience, they will work closely with the salesperson initially in order to gain insight into the required skills and techniques.
 
@@ -469,6 +504,7 @@ While initially the founders are paid a lower than average wage for an engineer,
   \label{tab:salaries}%
 \end{table}%
 
+\newpage
 \section{Cash Flow Statement}
 Based on the information outlined in the above sections, a cash flow statement for the first five years of business is created. A plot of the cash in the business is shown in \cref{fig:cashflowplot}. The actual statement is shown in \cref{fig:CashFlowStatement_horizontal}. The projected break-even point is within three years of operation. It can be seen that once the company breaks even, the cash-flow income grows at a rapid rate.
 
@@ -574,19 +610,18 @@ All components are sourced from Mouser in order to reduce the risk of importing 
 \begin{table}[htbp]
   \centering
   \caption{Table Showing the cost of all the components of the product}
-    \begin{tabular}{LLLL}
+    \begin{tabular}{k{0.2\textwidth}k{0.15\textwidth}R{0.15\textwidth}k{0.3\textwidth}}
     \toprule
     \textbf{Item} & \textbf{Component} & \textbf{Unit Cost} & \textbf{Source} \\
     \midrule
-    \multirow{2}[2]{*}{GPS Module} & \multirow{2}[2]{*}{GPS UART Module} & \multirow{2}[2]{*}{R 218.94} & Mouser:  \\
-          &       &       & 963-GYSFFMAXB  \\
-    GSM Module & SIMCOM SIM900 GSM/GPRS Module & R 250 & SIMCOM \\
-    Camera Module & OmniVision OV9712 IMAGE SENSOR MODULE & R 432.35 & Mouser: 931-LI-OV9712-FF-65  \\
-    Embedded Linux System & Olimex A13 & R 992.82 & Mouser: 909-A13OLINUXINOMICR \\
-    Miscellaneous  & Passive components & R 500 & Mouser \\
-    PCB Manufacturing & PCB, Part Placement & R 250 & Microtronix \\
-    Enclosure Manufacturing & 3D printing and injection moulding & R 300 & PC Plastics \\
-    Product Assembly &       & R 100 & Uvuka \\
+	GPS Module & GPS UART Module & R 218.94 & Mouser: 963-GYSFFMAXB \\ \midrule
+    GSM Module & SIMCOM SIM900 GSM/GPRS Module & R 250.00 & SIMCOM \\ \midrule
+    Camera Module & OmniVision OV9712 IMAGE SENSOR MODULE & R 432.35 & Mouser: 931-LI-OV9712-FF-65  \\ \midrule
+    Embedded Linux System & Olimex A13 & R 992.82 & Mouser: 909-A13OLINUXINOMICR \\ \midrule
+    Miscellaneous  & Passive components & R 500.00 & Mouser \\ \midrule
+    PCB Manufacturing & PCB, Part Placement & R 250.00 & Microtronix \\ \midrule
+    Enclosure Manufacturing & 3D printing and injection moulding & R 300.00 & PC Plastics \\ \midrule
+    Product Assembly &       & R 100.00 & Uvuka \\ \midrule
 
     \textbf{Total:} &       & R 3 044.11 &  \\
     \bottomrule
@@ -602,18 +637,28 @@ The PCB manufacturing will be outsourced to Microtronix, a PCB production compan
 Initially 3D printing and subsequent injection molding will be completed by PC Plastics in Johannesburg, after which the process will be outsourced overseas to reduce production costs. PC Plastics also use the ISO 9001:2008 quality control standard - this reduces the risk of enclosure failure during operation. They also provide enclosure assembly should production demands increase beyond in-house assembly capabilities before an overseas production company is found. 
 
 %TODO - this needs to be talked about, can't just be left on its own here without an explanation + detail, blah blah blah :P
-\section{Production Timeline/ Schedule}
+\section{Production Timeline and Schedule}
+The Gantt chart seen in  \cref{fig:Gantt Chart 1} below is a visual representation of the predicted timeline for Uvuka during the first year of operation. During the first year of business operation, all market research and product development will have been completed. The critical activity for this period is the development of the product prototype. Successful completion of this task by the 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{images/Gantt_2016.PNG}
+\includegraphics[width=1\textwidth]{Gantt_1.PNG}
 \vskip10pt
-\caption[Gantt Chart of the first year of operations of Uvuka]{Gantt Chart of the first year of operations of Uvuka}
+\caption[Gantt Chart of the first year of operation of Uvuka]{Gantt Chart of the first year of operation of Uvuka}
 \label{fig:Gantt Chart 1}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Gantt_2.PNG}
+\vskip10pt
+\caption[Gantt Chart of the years 2017 to 2020 of the operation of Uvuka]{Gantt Chart of the years 2017 to 2020 of the operation of Uvuka}
+\label{fig:Gantt Chart 2}
+\end{figure}
+
+
 \newpage 
 \section{Risk Analysis}
-A new business venture faces many risks and it is imperative that these risks are mitigated to ensure company success. One of the ways of pre-empting risks is to analyse them with the IEC61508 standard. This is done by looking at possible risks and their associated severity and frequency of occurrence, and then designing mitigation strategies to reduce their impact. The severity of an event is classed from Negligible to Catastrophic, and the probability of occurrence from Incredible to Frequent, as seen in \Cref{fig:risktable}. The classes of Risk, where $Risk = Severity * Probability$ are split into four categories, Class I to IV.
+A new business venture faces many risks and it is imperative that these risks are mitigated to ensure company success. One of the ways of pre-empting risks is to analyse them with the IEC61508 standard. This is done by looking at possible risks and their associated severity and frequency of occurrence, and then designing mitigation strategies to reduce their impact. The severity of an event is classed from Negligible to Catastrophic, and the probability of occurrence from Incredible to Frequent, as seen in \Cref{fig:risktable}. The classes of Risk, where $Risk = Severity * Probability$ are split into four categories, Class IV to I.
 
 \begin{figure}[H]
 \centering
@@ -632,7 +677,7 @@ This risk matrix will be used to classify each of the events as outlined in \cre
     \toprule
     \textbf{Event} & \textbf{Sev} & \textbf{Prob} & \textbf{Class} & \textbf{Mitigation} & \textbf{Prob} & \textbf{Class} \\
     \midrule
-    Manufacturing defects causing non- or partially functioning devices & Cat & R &	II &	Test every product thoroughly before commissioning throught multiple quality control checks &  Im &	III \\ \midrule
+    Manufacturing defects causing non- or partially functioning devices & Cat & R &	II &	Test every product thoroughly before commissioning through multiple quality control checks &  Im &	III \\ \midrule
 	Lack of funding & Cat & O & I & Target many investors and companies for investment & Im & III \\ \midrule
     Vehicles no longer need drivers and company becomes bankrupt & Cat & P & I & Adapt product and company goals when the time comes & Im & IV \\ \midrule
     Lawsuit against Uvuka for product not working when used incorrectly & Crit & O & II & Seek legal advice to assist in writing up contract agreement before selling product & Inc & IV \\ \midrule
@@ -642,7 +687,7 @@ This risk matrix will be used to classify each of the events as outlined in \cre
   \label{tab:rm}%
 \end{table}%
 
-As can be seen from \cref{tab:rm}, risks have been thought of, well, mostly. No one will die. Well, they might. But we'll have lawyers by then. % and stuff and nonsense blah blah % fix this tomorrow -L
+As can be seen from \cref{tab:rm}, the probability of the risk situations occuring is decreased through implementation of the mitigation strategies. Most of the situations as outlined above have already been addressed in this business plan. However, as a new company, new risks will always arise. Because of this, Uvuka are committed to meeting once every two months to review the risks and the mitigation strategies, and to evaluate if the current mitigation strategies are working as well as to identify and plan for previously unforeseen risks.
 
 
 
@@ -651,6 +696,7 @@ As can be seen from \cref{tab:rm}, risks have been thought of, well, mostly. No 
 
 The current team consists of five founders:
 \subsection{Munawwar Tayob - The big boss}
+%TODO - fill this out
 Munawwar holds a BSc. (Eng) in Mechatronics from the University of Cape Town. She......
 
 \subsection{Benjamin Scholtz - Product Development}
@@ -675,7 +721,6 @@ Uvuka will need to also start hiring technicians to help assemble and troublesho
 Part-time cleaning and maintenance staff will be hired once Uvuka reaches a certain level of production. This will free up time that the employees and founders would need to spend on this and thus allow them to contribute more to the company.
 
 \section{Future developments}
-%Munawwar/Luke add your bit here from the poster or slideshow, go wild.
 In the future, Uvuka will seek to become a automotive safety company by expanding the product range. This will comprise of four stages:
 \begin{enumerate}
 \item Immediate implementation (year 5)
@@ -687,7 +732,7 @@ In the future, Uvuka will seek to become a automotive safety company by expandin
 \subsection{Immediate Implementation}
 After the 5 year mark, we as a company will have started diversifying our products to suit more road users, from private family use to large freight companies. We will continue in this way for a few more years, strengthening our reputation and position in the market as a road safety company. We intend to expand up into Southern Africa and capitalise on the emerging markets on our doorstep.
 
-%TODO - add more detail for the technical description of some of these features perhaps.
+%TODO - add more detail for the technical description of some of these features perhaps. - don't think any more info is needed here? -L
 In terms of the physical additions to our device, the following provide some insight into the possibilities:
 \begin{itemize}
 \item \textit{Insurance feature:} An added road-facing camera integrated into the device, recording footage which could be used in the event of an accident to prove driver innocence.
@@ -697,6 +742,7 @@ In terms of the physical additions to our device, the following provide some ins
 \item \textit{Smart phone application:} Linking the device via GSM/Bluetooth/Wi-Fi could allow easier access to a history of driving activity.
 \end{itemize}
 
+\newpage 
 \subsection{Short-Term Expansion}
 After 10 years, we aim to partner with various car manufacturers and integrate our camera systems into their vehicles, much like the current Toyota \cite{toyota} and Lexus \cite{lexus} cars that have similar drowsiness detection systems. We will aim to assist the car manufacturers we join to incorporate additional warning levels in the form of independent brake control to either jolt the driver awake or stop the car completely, depending on if the driver reacts to the previous warnings. \Cref{fig:lexusdash} shows the current drowsiness detection dashboard camera integrated into a Lexus vehicle's dashboard.
 
@@ -711,6 +757,7 @@ After 10 years, we aim to partner with various car manufacturers and integrate o
 \subsection{Intermediate Expansion}
 New technology will run concurrently with the short-term expansion goals to control a driver's cellphone notification alerts, vehicle radio, and any other additional stimuli. This will seek to reduce the distractions faced by the driver. Research into how drivers react to disturbances while driving will need to be undertaken in order to ensure the product meets its objectives.
 
+\newpage
 \subsection{Long-Term Expansion}
 In the not-too-distant future, the road will be filled with self-driving vehicles, similar to Google's self-driving cars as seen in \Cref{fig:gcars}. This threatens to make our current Uvuka Pro device redundant as drivers will not necessarily need need to be kept awake at the wheel. However, the inevitable transition period ahead will require drivers to be on alert in the event that the autonomous system is unable to navigate the vehicle. If our system detects that the occupant is not fast asleep or too drowsy to drive, warnings could be sounded and the occupant alerted to the fact that they need to take over from the automated system. Similarly, the cabin camera can be reconfigured to send signals to the car to indicate whether the occupants are awake or asleep, and adjust the driving style accordingly.
 
@@ -718,10 +765,9 @@ In the not-too-distant future, the road will be filled with self-driving vehicle
 \centering
 \includegraphics[width=0.7\textwidth]{images/Google_Cars}
 \vskip10pt
-\caption[Google's Self-driving Cars]{Google's self-driving Cars \cite{googlecars}}
+\caption[Google's Self-driving Cars]{Google's Self-driving Cars \cite{googlecars}}
 \label{fig:gcars}
 \end{figure}
-
 
 
 

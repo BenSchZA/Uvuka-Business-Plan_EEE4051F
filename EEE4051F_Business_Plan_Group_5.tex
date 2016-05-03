@@ -96,14 +96,16 @@ Our five founding members consist of a combination of Mechatronic and Electrical
 	Gyroscope: & an electronic sensor for measuring angular velocity\\
     Haar Cascade classifier: & an object detection method based on repetitive feature pattern classification\\
     IEC 61508: & an International standard of rules applied in industry\\
-    Inertial Navigation System:	&	a combination of electronic sensors that provide a reference location\\
+    Inertial Navigation System:	&	a combination of electronic sensors that when used in conjunction are able to provide a reference location\\
     Injection molding: & a plastic forming process\\
-    IoT: & internet of things - devices connected to an internet cloud network\\
+    IoT: & Internet of Things - devices connected to an Internet cloud network\\
     ISO 9001:2008: & a quality standard management system\\
     Linux: & an operating system based on Unix employing free and open source software ideology\\
 	Magnetometer:   & an electronic sensor for measuring magnetic forces\\
     OpenCV: & an open source software library for image processing\\
+    Open source: & redistributive software that runs on freely available code\\
     PCB: & a printed circuit board for electronic devices\\
+    SolidWorks: & Mechanical design software used for drawing and 3D-rendering\\
     Xively: & an IoT product management framework\\
     3D printing: & an additive manufacturing process used to create three-dimensional objects\\
     
@@ -113,17 +115,17 @@ Our five founding members consist of a combination of Mechatronic and Electrical
 
 \pagenumbering{arabic}	%start the page numbering (and reset it to zero)
 \chapter{Introduction}
-\section{Background}
-In South Africa, there were 4500 road accidents which claimed the lives of more than 5500 people between 2014 and 2015 \cite{EWNRoadDeaths}. Around 25\% of these accidents were due to delayed reactions in fatigued drivers.
+\section{Problem Background}
+In South Africa, there were 4500 road accidents which claimed the lives of more than 5500 people between 2014 and 2015 \cite{EWNRoadDeaths}. Around 25\% of these accidents were due to delayed reactions in fatigued drivers. Truck drivers who work for freight companies often have to travel long distances and are of primary concern to us as they put themselves and others in greater danger on the road. This problem continues to exist because, unlike the `breathalyzer' used to detect a driver's level of intoxication, there is currently no method available in South Africa to monitor drowsiness.
 
 \section{Uvuka's Mission}
-Uvuka seeks to reduce the number of deaths on the road by providing a driver-monitoring device which will set off alarms when a driver becomes drowsy and closes their eyes or is distracted. This device is targeted at drivers who spend many hours on the road and are prone to fatigue, but will initially only be marketed to companies. It can be used by individuals or by companies who own fleets of trucks, buses, or taxis. As this device will be permanently mounted inside the company's vehicles and will be linked to the main control room, the company will be able to monitor the drivers and receive alerts to make radio contact if a driver is becoming too drowsy to drive, thus ensuring their safety.
+Uvuka seeks to reduce the number of deaths on the road by providing a driver-monitoring device which will set off alarms when a driver becomes drowsy and closes their eyes or is distracted. This device is targeted at drivers who spend many hours on the road and are prone to fatigue, but will initially only be marketed to companies. It can be used by individuals or by companies who own fleets of trucks, buses, or taxis. As this device will be permanently mounted inside the company's vehicles and will be linked to their main control room, the company will be able to monitor the drivers and receive alerts to make radio contact if a driver is becoming too drowsy to drive, thus ensuring their safety.
 
 \section{Purpose of this Business Plan}
-This business plan lays out the progress made to date by our budding company, in order to secure investments that will enable Uvuka to continue to grow. It provides detail on our product, the marketing strategy, financial plan, and business operations.
+This business plan documents the feasibility of starting and running our company, Uvuka, in order to secure investments that will enable Uvuka to continue to grow. It provides information on the proposed product, the company's marketing and operational plans, as well as a comprehensive analysis of our financial plan over the next five years. 
 
-\section{Layout of this Business Plan}
-The business plan begins by describing the product in detail. The marketing plan is then presented where the problem is dealt with in more detail and the target market as well as the competitors in this field are discussed. The finances of the company establish the required figures and projections including the operation time-line, expected costs, and cash flows. Lastly, the operations plan will describe the possible business office location, manufacturing process, production time-line, risk analysis, introduce the team members, and propose how we plan to extend our business going forward.
+\section{Layout of Business Plan}
+The business plan begins by describing the product in detail. The marketing plan is then presented where the problem is dealt with in more detail and the target market, as well as the competitors in this field, are discussed. The finances of the company establish the required figures and projections, including the operation time-line, expected costs, and cash flows. Lastly, the operational plan will describe the possible business office location, the manufacturing process and the production time-line. A risk analysis is conducted, team members are introduced, and a plan on how to extend our business going forward is proposed.
 
 \newpage 
 \chapter{Product Description}
@@ -132,15 +134,15 @@ Uvuka seeks to reduce road accidents through intelligent monitoring of vehicle d
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{images/Uvuka_casing_concept.JPG}
+\includegraphics[width=1\textwidth]{images/Uvuka_casing_concept.JPG}
 \vskip10pt
 \caption{Conceptual design of Uvuka device as rendered in SolidWorks}
 \label{fig:Uvuka_casing_concept}
 \end{figure}
+\pagebreak
+Uvuka currently has the Uvuka Pro concept as the flagship product. Having a single product in these early stages allows the company to establish itself and focus resources on a particular device. An extended product range will eventually center around the same goal (keeping the driver awake while driving) but with different features present in different models. The first prototype produced will be the most elementary device, and once orders have been secured and units delivered, more advanced products can be developed and brought to the market.
 
-Uvuka currently has the Uvuka Pro concept as the flagship product. Having a single product in these early stages allows the company to establish itself and focus resources on a particular device. An extended product range will eventually center around the same goal (keeping the driver awake while driving) but with different features present in different models. The first prototype produced will be the most elementary device, and once orders have been secured and units delivered, more advanced products can be developed and brought to market.
-
-\section{Technical description of Uvuka}
+\section{Technical Description of Uvuka}
 \label{sec:Technical description of Uvuka}
 The basic product consists of four main hardware components:
 \begin{enumerate}
@@ -152,7 +154,7 @@ The basic product consists of four main hardware components:
 
 \newpage 
 \subsection{Modes of Operation}
-The product has various modes of operation as seen in \cref{fig:DeviceFlowChart} below. The system defaults to the passive scanning mode where the device detects the driver's face and monitors eye movement. If the eye is determined to be closed, the device  enters a minor emergency state and assumes the driver's concentration has begun to wane. A brief sound is emitted to alert the driver. If this does not cause a satisfactory level of alertness, it assumes the driver is at risk of falling asleep and proceeds to take more drastic action. The action taken depends on the time the driver remains unresponsive and will vary from one type of device to the other.
+The product has various modes of operation as seen in \cref{fig:DeviceFlowChart} below. The system defaults to the passive scanning mode where the device detects the driver's face and monitors eye movement. If the driver's eyes are determined to be closed, the device  enters a minor emergency state and assumes the driver's concentration has begun to wane. A brief sound is emitted to alert the driver. If this does not cause a satisfactory level of alertness, it assumes the driver is at risk of falling asleep and proceeds to take more drastic action. The action taken depends on the time the driver remains unresponsive and will vary from one type of device to the other.
 
 \begin{figure}[H]
 \centering
@@ -179,32 +181,30 @@ The classifiers used are open source and in future product development these cla
 
 \newpage
 \subsection{Uvuka Supervisor Interface}
-The Uvuka Supervisor Interface provides a means for the fleet manager or supervisor to monitor their vehicles. This interface can be seen in \cref{fig:UvukaInterface} below. The interface was designed using an online interface designer tool called ``freeboard.'' The IoT (Internet of Things) platform uses the Xively cloud framework which provides an IoT  product management system that is secure, scalable and has great support. Different sensor inputs and control outputs can be set up to include GPS location, camera monitoring, driver responsiveness, vehicle speed, and vehicle alarms as seen in \cref{fig:UvukaInterface}. This is highly extensible and allows Uvuka the flexibility it needs to stay relevant to customers and their changing requirements.
+The Uvuka Supervisor Interface provides a means for the fleet manager or supervisor to monitor their vehicles. This interface can be seen in \cref{fig:UvukaInterface} below. The interface was designed using an online interface designer tool called ``freeboard''. The IoT (Internet of Things) platform uses the Xively cloud framework which provides an IoT  product management system that is secure, scalable and has efficient support. Different sensor inputs and control outputs can be set up to include GPS location, camera monitoring, driver responsiveness, vehicle speed, and vehicle alarms as seen in \cref{fig:UvukaInterface}. This is highly extensible and allows Uvuka the flexibility it needs to stay relevant to customers and their changing requirements.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{images/uvuka-interface.png}
 \vskip10pt
-\caption[Uvuka Interface]{Uvuka Pro Supervisor Interface.}
+\caption[Uvuka Interface]{Uvuka Pro Supervisor Interface}
 \label{fig:UvukaInterface}
 \end{figure}
 
 \newpage
 \section{Product Range}
-The the Uvuka Pro product explained in \cref{sec:Technical description of Uvuka} above is envisioned as being the initial market entry product that commercial customers will be able to order. This will be targeted at freight companies' truck drivers who require this device. As the business grows, the product range will be expanded based on consumer feedback and market research.
+The Uvuka Pro product explained in \cref{sec:Technical description of Uvuka} above is envisioned as being the initial market entry product that commercial customers will be able to order. This will be targeted at freight companies' truck drivers who require this device. As the business grows, the product range will be expanded based on consumer feedback and market research.
 
-There are a number of other products and expansions planned:
-\begin{itemize}
-\item Uvuka Companion: This product is aimed at taxi operators and delivery drivers that are behind the wheel for extended periods of time. They are more likely to drive while tired or near exhausted (some taxi drivers can have shifts over 14 hours long \cite{taxiDriverHours}). In this case, sound may not be enough to wake them up. This product will have a strip attached to the steering wheel that will vibrate if the driver begins to fall asleep.
-\item Uvuka Pro+: this product also incorporates the eye camera and vibrating steering wheel attachment. Additionally, it also has a second camera facing the road in front of the driver and a GPS unit to track the vehicle's location. All this data is recorded to an SD card. This system is aimed for long distance freight vehicles and allows fleet managers to monitor their drivers and vehicles through the INS data for quality and insurance purposes.
-\end{itemize}
+There are a number of other products and expansions planned. Two of these are discussed below, highlighting the possibility of product enhancement and market expansion for Uvuka.\\
+\\1. Uvuka Companion: \\This product is aimed at taxi operators and delivery drivers that are behind the wheel for extended periods of time. They are more likely to drive while tired or near exhausted (some taxi drivers can have shifts over 14 hours long \cite{taxiDriverHours}). In this case, sound may not be enough to wake them up. This product will have a strip attached to the steering wheel that will vibrate if the driver begins to fall asleep.\\
+\\2. Uvuka Pro+: \\This product also incorporates the eye camera and vibrating steering wheel attachment. Additionally, it has a second camera facing the road in front of the driver and a GPS unit to track the vehicle's location. All this data is recorded to an SD card. This system is aimed at long distance freight vehicles and allows fleet managers to monitor their drivers and vehicles through the INS data for quality and insurance purposes.
 
-\section{Advantages of Uvuka over competitor products}
+\section{Uvuka's Competitive Advantage}
 \label{sec:advantages}
-Uvuka's devices will include unique features that allow them to perform several of the tasks currently performed by competing products. The primary difference in our innovative product is in our communications link between the driver and an external onlooker. This allows real-time monitoring that ensures the driver cannot simply ignore the device alerts or turn the device off without alerting the supervisor. Toyota and Seeing Machines are two companies that have developed devices which share certain similarities with our product. These are presented below.
+Toyota and Seeing Machines are two companies that have developed devices which share similarities with our product. A competitor analysis is carried out below, describing the current available technology and substitute products offered by our competitors.\\
 
+Toyota has been implementing driver alertness technology in their luxury Toyota Crown vehicles since 2008. This allows an on-board computer to calculate how open the driver's upper and lower eyelids are as seen in \cref{fig:toyota_sensors}. They also include proximity sensors outside the vehicle to allow advanced preparation of brakes or airbags depending on the likelihood of a collision \cite{toyota}. 
 \newpage
-Toyota have been implementing driver alertness technology in their luxury Toyota Crown vehicles since 2008. This allows an on-board computer to calculate how open the driver's upper and lower eyelids are as seen in \cref{fig:toyota_sensors}. They also include proximity sensors outside the vehicle to allow advanced preparation of brakes or airbags depending on the likelihood of a collision \cite{toyota}. 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{images/toyota.PNG}
@@ -218,12 +218,13 @@ Seeing Machines partnered with Intel, Land Rover, and Jaguar to integrate their 
 \centering
 \includegraphics[width=0.75\textwidth]{images/seeingmachines.png}
 \vskip10pt
-\caption[Toyota driver alertness system]{Seeing Machines technology tracks driver's pupils to determine drowsiness or distractions and provide warnings \cite{sm_similarities}}
+\caption[Toyota driver alertness system]{Seeing Machines technology tracks driver's pupils to determine drowsiness or distractions and provides necessary warnings \cite{sm_similarities}}
 \label{fig:sm_video}
 \end{figure}
+Uvuka's devices will include unique features that allow them to perform several of the tasks currently performed by competing products. The primary competitive advantage of our innovative product lies in the communications link between the driver and an external onlooker. This allows real-time monitoring that ensures the driver cannot simply ignore the device alerts or turn the device off without alerting the supervisor. 
 
-\section{Product positioning}
-The product will need to be versatile in order to cater for the needs of a number of different industries. The following sectors are to be considered:
+\section{Product Positioning}
+The product will need to be versatile in order to cater for the needs of a number of different industries. The following sectors are considered:
 \begin{itemize}
 \item Heavy duty freight truck drivers
 \item Bus drivers
@@ -232,12 +233,12 @@ The product will need to be versatile in order to cater for the needs of a numbe
 \item Private use
 \end{itemize}
 
-\section{Intellectual Property and freedom of trade}
-As briefly mentioned in \cref{sec:advantages}, this drowsiness sensing technology has been around for a number of years. Uvuka, however, brings new ideas to the fold by incorporating fleet monitoring systems with a control center communications link - something that is yet to be made commercially available. It is for this reason that Uvuka applied for, and received their own patent on their communications link which alerts the control center of a driver who is showing signs of fatigue. This then allows the control center to check in on the driver and ensure their safety.
+\section{Intellectual Property and Freedom of Trade}
+As briefly mentioned in \cref{sec:advantages}, this drowsiness sensing technology has been around for a number of years. Uvuka, however, brings new ideas to the fold by incorporating fleet monitoring systems with a control center communications link - something that is yet to be made commercially available. It is for this reason that Uvuka applied for, and received their own patent on their communications link which alerts the control center of a driver who is showing signs of fatigue. This feature allows the control center to check in on the driver and ensure their safety, thus making Uvuka's product unique in the market.
 
 \newpage
 \chapter{Marketing Plan}
-\section{Problem background}
+\section{Problem Background}
 The harrowing death toll statistics on our country's roads motivated the company to engineer a product capable of making them a safer place for all \cite{EWNRoadDeaths}. South Africa's railway system is currently unable to support the needs of the growing economy. With 88\% of all freight being moved on the roads \cite{BDlive_freight}, many truck drivers are exposed daily to the risks of falling asleep at the wheel \cite{ArriveAliveDriverTiredness} and increase the risk of road accidents caused by fatigue \cite{News24TruckersSleeping}.
 
 In addition, \cref{tab:deaths100thousand} shows that South Africa is significantly behind both developed and developing countries in the effort to curb road accident deaths, ranked \nth{36} in the world for number of road deaths per 100 000 inhabitants \cite{deathsPer100thousandStats}.
@@ -266,44 +267,44 @@ To understand the regional road death statistics, the figures over the two-month
 \centering
 \includegraphics[width=1\textwidth]{images/provincial_fatalities.PNG}
 \vskip10pt
-\caption[Provincial fatalities for the period from 1 December 2014 to 7 January 2015]{Provincial fatalities for the period from 1 December 2014 to 7 January 2015}
+\caption[Provincial fatalities for the period from 1 December 2014 to 7 January 2015]{Provincial fatalities for the period from 1 December 2014 to \linebreak 7 January 2015 from \cite{ProvincialFestiveStats}}
 \label{fig:festiveSeason}
 \end{figure}
 
-\section{Target market}
+\section{Target Market}
 Freight companies are the primary customers that Uvuka will seek to cater for in the automotive industry. As outlined in the problem background, these companies are significantly more likely to require driver monitoring technology in the South African context as they work their long shifts on our nation's overcrowded roads.
 
 In addition to the larger freight companies, smaller companies and couriers may also be interested in installing these devices. However, the more established enterprises are expected to make up the majority of our sales.
 
-\section{Competitor product analysis}
+\section{Competitor Product Analysis}
 \label{sec:competitoranalysis}
-There are currently two primary international competitors producing a similar product. Seeing Machines, a company based in Australia, have developed a technology that tracks driver eyelid movement through computer vision algorithms \cite{SeeingMachinesWebsite}. They monitor the frequency and duration of blinking, as well as eyelid velocity. If the driver's head begins to drop, an audio alarm is triggered and the seat vibrates. If they fall asleep again, a dispatcher is alerted and may make radio contact with the driver to check if they need a break. Seeing Machines has specifically worked with drivers that operate Caterpillar mining equipment \cite{SeeingMachinesWired}. They have recently expanded into the private sector by partnering with Land Rover, Jaguar, and Intel \cite{sm_similarities}.
+There are currently two primary international competitors producing a similar product. Seeing Machines, a company based in Australia, has developed a technology that tracks driver eyelid movement through computer vision algorithms \cite{SeeingMachinesWebsite}. They monitor the frequency and duration of blinking, as well as eyelid velocity. If the driver's head begins to drop, an audio alarm is triggered and the seat vibrates. If they fall asleep again, a dispatcher is alerted and may make radio contact with the driver to check if they need a break. Seeing Machines has specifically worked with drivers that operate Caterpillar mining equipment \cite{SeeingMachinesWired}. They have recently expanded into the private sector by partnering with Land Rover, Jaguar, and Intel \cite{sm_similarities}.
 
 \pagebreak
 The second competitor company is Exeros, based in the United Kingdom \cite{Exeros}. Their product is targeted at businesses that operate a fleet of vehicles. When the driver begins to fall asleep, audio tones are sounded to attempt to wake them up. The devices they produce are able to be connected to an external GPS so that when an alarm is triggered, an outside individual can be notified of the occurrence and the location.
 
-\section{Market strategy}
+\section{Market Strategy}
 Once the context in which the device will operate is established, a market analysis will provide improved targeting of potential customers and insight into market trends. No South African competitors currently exist and so the company is expected to capture a significant portion of the market due to the product’s relative novelty, affordability, and necessity.
 
-\subsection{Initial market research}
-Approximately three months will be set aside in the beginning in order to conduct extensive research into the current market for this product. This will allow for better product positioning and ensure maximum impact of any targeted advertising. The following areas will need to be investigated:
+\subsection{Initial Market Research}
+Approximately three months will be set aside initially in order to conduct extensive research into the current market for this product. This will allow for better product positioning and ensure maximum impact of any targeted advertising. The following areas will need to be investigated:
 \begin{itemize}
 	\item \textit{How much will an Uvuka device cost to manufacture?} - manufacturing companies will need to be contacted before the prototyping process in order to accurately estimate the costs involved for the required quantities and future bulk orders.
 	\item \textit{What are customers prepared to pay for a driver monitoring device?} - truck companies and commercial drivers will be asked what their expectations are for the product's features and its price.
 	\item \textit{How many Uvuka devices will be required in order to curb road accident deaths in South Africa?} - South African road accident statistics will need to be further analysed in order to provide a reasonably accurate estimate of this figure.
-	\item \textit{Which companies should the Uvuka approach for the first stage of product roll-out?} - an investigation into which companies travel in the more dangerous provinces will provide further insight.
+	\item \textit{Which companies should Uvuka approach for the first stage of product roll-out?} - an investigation into which companies travel in the more dangerous provinces will provide further insight.
 	\item \textit{How will commercial drivers react to being monitored constantly?} - drivers will need to be interviewed in order to obtain their feedback. This way Uvuka will be able to position itself as a tool that saves lives, and not something that is there to spy on employees.
 \end{itemize}
 
- \section{SWOT analysis}
-A SWOT analysis is a common market research tool that analyses the Strengths, Weaknesses, Opportunities and Threats faced by a particular company. This is presented below in terms of internal and external origin:
+ \section{SWOT Analysis}
+A SWOT analysis is a common market research tool that analyses the Strengths, Weaknesses, Opportunities, and Threats faced by a particular company. This is presented below in terms of internal and external origin:
 \pagebreak
-\subsection{Internal origin}
+\subsection{Internal Origin}
 \subsubsection{Strengths}
 \vskip8pt
 \begin{itemize}
 \item compact size, non-intrusive when mounted on the dashboard
-\item the relatively low cost to manufacture allows for a competitive selling price
+\item the relatively low cost to manufacture the device allows for a competitive selling price
 \item functionality (GPS, integrated sensors, camera, alerts)
 \item outsourced manufacturing of components with on-site assembly to control quality
 \item initial small-scale business structure enables rapid adjustments and fine tuning
@@ -321,7 +322,7 @@ A SWOT analysis is a common market research tool that analyses the Strengths, We
 \item legal implications if vehicle crashes due to driver fatigue despite Uvuka monitoring being installed and in use
 \end{itemize}
 \vskip15pt
-\subsection{External origin}
+\subsection{External Origin}
 \subsubsection{Opportunities}
 \vskip8pt
 \begin{itemize}
@@ -343,7 +344,7 @@ A SWOT analysis is a common market research tool that analyses the Strengths, We
 \end{itemize}
 \vskip15pt
 
-\section{Uvuka product name and logo}
+\section{Uvuka Product Name and Logo}
 ``Uvuka" literally means ``wake up" in Zulu. Other variations of the word are ``vuka" (get up) or ``uvukile" (to wake up), but it was felt that ``Uvuka" was the most suitable of these derivatives. This name gives an indication of the urgency in waking up, as well as a direct link to the South African origins of the company.
 
 In order to convey the product's purpose and the company's values, a logo was designed as seen in \cref{fig:uvuka_logo}. This seeks to motivate the product to potential investors and customers as a device that keeps an eye open in order to ensure your safety or the safety of your employees on the roads.
@@ -356,18 +357,20 @@ In order to convey the product's purpose and the company's values, a logo was de
 \label{fig:uvuka_logo}
 \end{figure}
 
-\section{Strategic partnerships}
+\section{Strategic Partnerships}
 In order to gain more traction in the market, Uvuka will seek to partner with the Automobile Association (AA) in South Africa. This will allow us to gain accreditation and influence within the automotive sector which is always seeking new ways to improve safety on the nation's roads.
 
 In addition to the AA, a partnership with an insurance company like Santam or Mutual \& Federal would be beneficial. Our devices would be able to reduce the insurance risk on the road and allow the insurer to offer a lower premium on their clients' policies that cover vehicles fitted with Uvuka hardware.
 
-\section{Market uptake}
+\section{Market Uptake}
 
-Based on current government projections, the amount of freight transported over roads in Gauteng is expected to drastically increase in the future. The Gauteng-Durban freight transport corridor increased its volumes of freight transport by an estimated 152\% from 2011 to 2014\cite{freighttransport}. This is just a single route in the region and is expected to grow each year. With this increased need to transport freight, more freight trucks will need to be purchased, increasing the number of trucks that require our product. With this substantial fleet of trucks on Gauteng roads, the question becomes not whether Uvuka can find customers to purchase its product, but rather if it has the capacity to supply the growing demand.
+Based on current government projections, the amount of freight transported over roads in Gauteng is expected to drastically increase in the future. The Gauteng-Durban freight transport corridor increased its volumes of freight transport by an estimated 152\% from 2011 to 2014 \cite{freighttransport}. This is just a single route in the region and is expected to grow each year. With this increased need to transport freight, more freight trucks will need to be purchased, increasing the number of trucks that require our product. With this substantial fleet of trucks on Gauteng roads, the question becomes not whether Uvuka can find customers to purchase its product, but rather if it has the capacity to supply the growing demand.
 
-The current sales projections outlined in the finance section are sales goals set to ensure that the company makes a profit. The expected ramp-up in sales is due to the Uvuka brand becoming known and trusted and sales to new customers increasing as a result. Furthermore, the number of private vehicles adopting the product is also expected to increase. Once the initial product is marketed to, and adopted by the first commercial customers, there will be a larger customer base to which we can market our products.
+\pagebreak
 
-\section{Distribution channel}
+The current sales projections outlined in the finance section are sales goals set to ensure that the company makes a profit. The expected ramp-up in sales is due to the Uvuka brand becoming known and trusted and sales to new customers increasing as a result. Furthermore, the number of private vehicles adopting the product is also expected to increase. Once the initial product is adopted by the first commercial customers, there will be a larger customer base to which we can market our products.
+
+\section{Distribution Channel}
 Uvuka's initial product aimed at commercial freight companies will be distributed once final quality control checks have been undertaken. Components and various subsystems are sourced from other businesses in order to reduce set-up costs. Once these are obtained from the various suppliers, our team will assemble and test the units on our premises. Clients will then be able to browse and order devices online via our website.
 
 Upon payment approval, Uvuka will send a technical company representative to install the device in the customer's vehicle. This eliminates the need for a courier or customer to collect the goods from Uvuka's offices. It also ensures higher customer satisfaction as the device can be tested in the vehicle and shown to the customer under the guidance of one of our team members.
@@ -523,7 +526,9 @@ While initially the founders are paid a lower than average wage for an engineer,
 \section{Cash Flow Statement}
 Based on the information outlined in the above sections, a cash flow statement for the first five years of business was created. A plot of the cash in the business is shown in \cref{fig:cashflowplot}. The actual statement is shown in \cref{fig:CashFlowStatement_horizontal}. The projected break-even point is within three years of operation. It can be seen that once the company breaks even, the cash-flow income grows at a rapid rate.
 
-The first year of operation does not require as much capital as the second year as most of the first year is spent developing the product. Furthermore, when the product is developed, it does not require a large capital investment to manufacture it as this process can be outsourced. The rest of the first year is spent making initial forays into the market, finding initial customers and training the founders in sales. Once the second year of operation begins, more staff are hired and more products are manufactured, thus resulting in more expenses as overheads increase. These overheads eventually help the company break even and make a large profit after the break even point (point $x$ on the graph) is reached.
+The first year of operation does not require as much capital as the second year as most of the first year is spent developing the product. Furthermore, when the product is developed, it does not require a large capital investment to manufacture it as this process can be outsourced.
+
+The rest of the first year is spent making initial forays into the market, finding customers and training the founders in sales. Once the second year of operation begins, more staff are hired and more products are manufactured, thus resulting in more expenses as overheads increase. These overheads eventually help the company break even and make a large profit after the break even point (point $x$ on the graph) is reached.
 
 \begin{figure}[H]
 \centering
@@ -560,20 +565,20 @@ An income statement was drawn up for the first five years of operation from the 
 
 A loss is made in the first year of operations for a number of reasons:
   \begin{enumerate}
-        \item \textit{Small Customer base} - in the first year of operations the Uvuka team is making its first forays into the market. No strategic partnerships have been formed and no customer base has been established. Over the years of operation this base will be expanded which allows the company to turn a profit in the future.
+        \item \textit{Small customer base} - in the first year of operations the Uvuka team is making its first forays into the market. No strategic partnerships have been formed and no customer base has been established. Over the years of operation this base will be expanded which allows the company to turn a profit in the future.
         \item \textit{Product development stage} - the product starts being sold mid-way through the year and so not enough of it will be sold to cover expenses.
         \item \textit{Founders are still being trained in sales} - the founders are still learning how to sell the product thus they will not sell as many as a fully-trained salesman could.
         \end{enumerate}
         
-As the company continues to grow, it will begin to turn a profit. After 5 years the income far outweighs the expenses.
+As the company continues to grow, it will begin to turn a profit. After five years the income far outweighs the expenses.
 
 \pagebreak
 \section{Balance Sheet}
 
 Using the Cash-flow statement in \cref{fig:CashFlowStatement_horizontal} and the Income statement in \cref{fig:IncomeStatement}, a balance sheet is drawn up for the first five years of operation. This balance sheet is shown in \cref{fig:BalanceSheet} below. A few conclusions can be drawn from this balance sheet:
 \begin{itemize}
-	\item \textit{Few initial fixed assets} - Uvuka does not have many fixed assets. The founders use their own personal computers which reduces start-up costs. The property is rented instead of bought, and the product manufacturing is outsourced which eliminates the need to purchase expensive manufacturing equipment.  
-    \item \textit{After 5 years Uvuka has large quantities of cash assets} - while Uvuka does not have many fixed assets by year five, it will have a large cash reserve. This will allow the company to withstand any unexpected crisis. Furthermore, these cash reserves can be used to expand the business or exploit opportunities that are discovered. This is a major strength
+	\item \textit{Few initial fixed assets} - Uvuka does not have many fixed assets. The founders use their own personal computers which reduces start-up costs. The property is rented rather than purchased, and the product manufacturing is outsourced which eliminates the need to purchase expensive manufacturing equipment.  
+    \item \textit{After five years Uvuka has large quantities of cash assets} - while Uvuka does not have many fixed assets by year five, it will have a large cash reserve. This will allow the company to withstand any unexpected crisis. Furthermore, these cash reserves can be used to expand the business or exploit opportunities that are discovered. This is a major strength.
     \item \textit{Overall assets in the business decrease in the second year of operation} - the business spends a large portion of its funds in the second year on salaries as it continues to build up its customer base. The money in the business is not converted into other assets. Once the third year of operation is finished, the business assets are again increasing.
     
 \end{itemize}
@@ -590,7 +595,7 @@ Using the Cash-flow statement in \cref{fig:CashFlowStatement_horizontal} and the
 \newpage
 
 \chapter{Operations Plan}
-\section{Business location}
+\section{Business Location}
 As mentioned earlier in the marketing plan, our head office will be set up in Johannesburg. This provides us convenient access to the freight companies that make up our target market. In addition, we will be nearer to suppliers and are able to find a location with a lower rent than an equivalent setup in Cape Town.
 
 This office space in Longmeadow (see \cref{fig:map}) is available for R65/m$^2$ and could provide the location Uvuka needs to grow as a new business. Its relatively low rental also allows the company to steward finances into areas of the business that will be more important for growth. The building, as shown in \cref{fig:offices}, appears to have suitable parking and security.
@@ -611,9 +616,7 @@ This office space in Longmeadow (see \cref{fig:map}) is available for R65/m$^2$ 
 \label{fig:offices}
 \end{figure}
 
-\section{Production and manufacturing}
-%\textit{Ben do this bit :P Talk about how we will make the parts elsewhere, and then assemble it ourselves or whatever we are doing, also about how making it in-house will improve quality control and allow us to change things quicker than if we had to go through a whole supply chain, that kind of thing.}
-%include risk management stuff associated with manufacturing here?
+\section{Production and Manufacturing}
 \subsection{Component Sourcing}
 Mouser Electronics has a convenient online component database. They have a wide range of components and import directly to Johannesburg. 
 
@@ -710,7 +713,7 @@ As can be seen from \cref{tab:rm}, the probability of the risk situations occuri
 
 
 \pagebreak
-\section{Staff and team expansion} 
+\section{Staff and Team Expansion} 
 
 The current team consists of five founders:
 \subsection{Munawwar~Tayob~-~Business~Administration/Management}
@@ -729,15 +732,15 @@ Gareth received his BSc. (Eng) in Electrical and Computer Engineering from the U
 Luke is an avid entrepreneur, with interests in system design, optimization, and a far-reaching vision. He obtained his BSc. (Eng) in Mechatronics from UCT, and his interests are applied within the Operations and Future Development section of Uvuka to stay abreast of the current developments and ensure that the company is always relevant to the market.
 
 \subsection{Future Hires}
-As Uvuka expands, it will be necessary to increase the number of team members hired. 
+As Uvuka expands, it will be necessary to increase the number of team members hired. When the product first goes to the market, a salesman will be hired. This salesman must be able to both sell the product and help the five founders perfect their sales technique. In this way, the founders can also assist in selling the product and thus alleviate the need to hire more salespeople.
 
-When the product first goes to the market, a salesman will be hired. This salesman must be able to both sell the product and help the five founders perfect their sales technique. In this way, the founders can also assist in selling the product and thus alleviate the need to hire more salespeople.
+\pagebreak
 
 Uvuka will need to also start hiring technicians to help assemble and troubleshoot the product once production accelerates. These technicians will assemble the product from the delivered component parts, conduct quality checks, and be sent out to repair any products that are not working. The founders will perform this task initially and assist the technicians once they have been hired. As all of the founders have engineering experience, they will be qualified to assist in this matter.
 
 Part-time cleaning and maintenance staff will be hired once Uvuka reaches a certain level of production. This will free up time that the employees and founders would need to spend on this and thus allow them to contribute more to the company.
 
-\section{Future developments}
+\section{Future Developments}
 In the future, Uvuka will seek to become a automotive safety company by expanding the product range. This will comprise of four stages:
 \begin{enumerate}
 \item Immediate implementation (year 5)
@@ -747,7 +750,7 @@ In the future, Uvuka will seek to become a automotive safety company by expandin
 \end{enumerate}
 
 \subsection{Immediate Implementation}
-After the 5 year mark, we as a company will have started diversifying our products to suit more road users, from private family use to large freight companies. We will continue in this way for a few more years, strengthening our reputation and position in the market as a road safety company. We intend to expand up into Southern Africa and capitalise on the emerging markets on our doorstep.
+After the five year mark, we as a company will have started diversifying our products to suit more road users, from private family use to large freight companies. We will continue in this way for a few more years, strengthening our reputation and position in the market as a road safety company. We intend to expand up into Southern Africa and capitalise on the emerging markets on our doorstep.
 
 In terms of the physical additions to our device, the following provide some insight into the possibilities:
 \begin{itemize}
@@ -784,12 +787,6 @@ In the not-too-distant future, the road will be filled with self-driving vehicle
 \caption[Google's Self-driving Cars]{Google's Self-driving Cars \cite{googlecars}}
 \label{fig:gcars}
 \end{figure}
-
-
-
-
-
-
 
 %\input{appendices.tex}	%for use with appendices
 \newpage
